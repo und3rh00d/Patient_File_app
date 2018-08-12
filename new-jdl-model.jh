@@ -1,0 +1,34 @@
+ entity User {
+ ID String,
+ username String,
+ password String
+ } 
+ 
+ entity IdentificationPatient{
+ Nom String,
+ Prenom String,
+ Age Integer,
+ Lieu_de_naissance String,
+ Adresse String,
+ Profession String,
+ Situation_matrimoniale String,
+ Telephone String,
+ Nom_de_la_personne_a_contacter String,
+ Lien_avec_la_personne_a_contacter String,
+ Telephone_de_la_personne_a_contacter String
+ }
+ 
+ entity Histoire_de_la_maladie {
+ Commentaires String
+ }
+ entity Antecedants{
+ Antecedants_medicaux String,
+ Antecedants_chirurgicaux String,
+ Antecedants_Gyneco_obstetricaux String,
+ Antecedants_Familiaux String
+ } 
+ relationship OneToOne{
+ User to IdentificationPatient
+ User to Histoire_de_la_maladie
+ User to Antecedants
+ }
